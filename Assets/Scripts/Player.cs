@@ -12,15 +12,12 @@ public class Player : MonoBehaviour
     Vector2 moveInput;
     Vector2 minBounds;
     Vector2 maxBounds;
-    Rigidbody2D rigidbody;
+    Rigidbody2D myRigidbody;
     
 
     void Awake()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
-        
-        
-            
+        myRigidbody = GetComponent<Rigidbody2D>();
     }
 
     void Start()
@@ -52,6 +49,6 @@ public class Player : MonoBehaviour
 
     void Move()
     {
-        rigidbody.velocity = new Vector2(moveInput.x * moveSpeed, moveInput.y * moveSpeed);
+        myRigidbody.velocity = new Vector2(moveInput.x * moveSpeed, moveInput.y * moveSpeed);
     }
 }
