@@ -13,11 +13,12 @@ public class Player : MonoBehaviour
     Vector2 minBounds;
     Vector2 maxBounds;
     Rigidbody2D myRigidbody;
-    
+    Shooter shooter;
 
     void Awake()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
+        shooter = GetComponent<Shooter>();
     }
 
     void Start()
@@ -41,14 +42,21 @@ public class Player : MonoBehaviour
         minBounds = cam.ViewportToWorldPoint(new Vector2(0, 0));
         maxBounds = cam.ViewportToWorldPoint(new Vector2(1, 1));
     }
+    void Move()
+    {
+        myRigidbody.velocity = new Vector2(moveInput.x * moveSpeed, moveInput.y * moveSpeed);
+    }
 
     void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
     }
 
-    void Move()
+    void OnFire(InputValue value)
     {
-        myRigidbody.velocity = new Vector2(moveInput.x * moveSpeed, moveInput.y * moveSpeed);
+        if (shooter != null)
+        {
+            shooter.isFiring = value.isPressed;
+        }
     }
 }

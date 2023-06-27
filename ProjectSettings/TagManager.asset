@@ -15,6 +15,8 @@ TagManager:
   - PlayerRay
   - Rocket
   - Bounds
+  - PlayerProjectile
+  - EnemyProjectile
   layers:
   - Default
   - TransparentFX
@@ -25,8 +27,8 @@ TagManager:
   - Bounds
   - Enemy
   - Player
-  - 
-  - 
+  - PlayerProjectile
+  - EnemyProjectile
   - 
   - 
   - 
