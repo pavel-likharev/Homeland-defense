@@ -217,6 +217,7 @@ MonoBehaviour:
   hitEffect: {fileID: 143957504708432579, guid: 9b7d8ef9cab66244cbe3abac83d8353d,
     type: 3}
   health: 50
+  applyCameraShake: 0
 --- !u!114 &7192371124900179898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,7 +234,7 @@ MonoBehaviour:
     type: 3}
   spawnPos: {fileID: 657817674158574075}
   projectileSpeed: 5
-  projectileLifetime: 2.5
+  projectileLifetime: 5
   firingRate: 1
   useAI: 1
   minimumFireRate: 0.2

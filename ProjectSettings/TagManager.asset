@@ -17,6 +17,7 @@ TagManager:
   - Bounds
   - PlayerProjectile
   - EnemyProjectile
+  - Weapon
   layers:
   - Default
   - TransparentFX

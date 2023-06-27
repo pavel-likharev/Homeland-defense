@@ -213,6 +213,7 @@ MonoBehaviour:
   hitEffect: {fileID: 143957504708432579, guid: 9b7d8ef9cab66244cbe3abac83d8353d,
     type: 3}
   health: 50
+  applyCameraShake: 1
 --- !u!50 &3911065672699983289
 Rigidbody2D:
   serializedVersion: 4
