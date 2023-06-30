@@ -218,6 +218,7 @@ MonoBehaviour:
     type: 3}
   health: 50
   applyCameraShake: 0
+  scoreValue: 120
 --- !u!114 &7192371124900179898
 MonoBehaviour:
   m_ObjectHideFlags: 0

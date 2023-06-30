@@ -26,11 +26,6 @@ public class Player : MonoBehaviour
         InitBounds();
     }
 
-    void Update()
-    {
-        
-    }
-
     void FixedUpdate()
     {
         Move();

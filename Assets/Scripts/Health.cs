@@ -1,20 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
     [SerializeField] ParticleSystem hitEffect;
     [SerializeField] int health = 50;
     [SerializeField] bool applyCameraShake;
+    [SerializeField] int scoreValue = 120;
 
     CameraShake cameraShake;
     AudioPlayer audioPlayer;
+    ScoreKeeper scoreKeeper;
+    GameManager gameManager;
 
     void Awake()
     {
         cameraShake = Camera.main.GetComponent<CameraShake>();
         audioPlayer = FindObjectOfType<AudioPlayer>();
+        scoreKeeper = FindObjectOfType<ScoreKeeper>();
+        gameManager = FindObjectOfType<GameManager>();
+    }
+
+    public int GetHealth()
+    {
+        return health; 
     }
 
     void TakeDamage(DamageDealer damageDealer)
@@ -23,6 +34,15 @@ public class Health : MonoBehaviour
     
         if (health <= 0)
         {
+            if (gameObject.tag == "Enemy")
+            {
+                scoreKeeper.ChangeScore(scoreValue);
+            }
+            else
+            {
+                gameManager.OnGameOver();
+            }
+
             Destroy(gameObject);
         }
     }
